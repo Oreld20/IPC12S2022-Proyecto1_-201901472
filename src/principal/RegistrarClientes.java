@@ -52,7 +52,6 @@ public class RegistrarClientes extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Apellido:");
 
-        txtCui.setBackground(new java.awt.Color(255, 255, 255));
         txtCui.setForeground(new java.awt.Color(0, 0, 0));
         txtCui.setBorder(null);
         txtCui.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -62,7 +61,6 @@ public class RegistrarClientes extends javax.swing.JPanel {
             }
         });
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
         txtNombre.setForeground(new java.awt.Color(0, 0, 0));
         txtNombre.setBorder(null);
         txtNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -72,7 +70,6 @@ public class RegistrarClientes extends javax.swing.JPanel {
             }
         });
 
-        txtApellido.setBackground(new java.awt.Color(255, 255, 255));
         txtApellido.setForeground(new java.awt.Color(0, 0, 0));
         txtApellido.setBorder(null);
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +115,7 @@ public class RegistrarClientes extends javax.swing.JPanel {
                         .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(179, Short.MAX_VALUE)
+                .addContainerGap(290, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,7 +156,7 @@ public class RegistrarClientes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

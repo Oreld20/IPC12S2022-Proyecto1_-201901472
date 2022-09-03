@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 
 public class CrearUnaCuenta extends javax.swing.JPanel {
  Cliente clientes [] = new Cliente [5];
- CuentaAsociada Asociados0 []= new CuentaAsociada [5];
   public Administrador Madre;
 
     public CrearUnaCuenta(Administrador ventanaMadre) {
@@ -47,13 +46,7 @@ public class CrearUnaCuenta extends javax.swing.JPanel {
 
     }
 
-    public CuentaAsociada[] getAsociados0() {
-        return Asociados0;
-    }
-
-    public void setAsociados0(CuentaAsociada[] Asociados0) {
-        this.Asociados0 = Asociados0;
-    }
+   
 
     public Cliente[] getClientes() {
         return clientes;
@@ -190,12 +183,10 @@ public class CrearUnaCuenta extends javax.swing.JPanel {
                     if (clientes[posicionClienteSeleccionado] != null) {
                         for (int j = 0; j <clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas.length; j++) {
                             if (clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas[j].Disponibilidad==true) {
-                                    int ContadorDeElCliente=Madre.contador+1;
+                                    int ContadorDeElCliente=Madre.contador;
                                    Madre.contador+=1;
                                 clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas[j]=new CuentaAsociada(ContadorDeElCliente, saldo);
-                                 System.out.println("El auto incremento es:" + ContadorDeElCliente);
-                                 System.out.println("El numero de asociado es: " + clientes [posicionClienteSeleccionado].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada() + " El saldo es: " +clientes [posicionClienteSeleccionado].listadoDeCuentasAsociadas[j].getSalado());
-                            break;
+                                 break;
                             }
                         }
                       

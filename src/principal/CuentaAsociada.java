@@ -5,6 +5,8 @@ public class CuentaAsociada {
     int Salado;
     int NumeroDeCuentaAsociada;
     boolean Disponibilidad = true;
+    
+    Informacion info [] = new Informacion[4];
 
     public boolean getDisponibilidad() {
         return Disponibilidad;
@@ -25,6 +27,7 @@ public class CuentaAsociada {
     this.Disponibilidad=false;
     
     }
+
 
     public int getSalado() {
         return Salado;

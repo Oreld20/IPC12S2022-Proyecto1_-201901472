@@ -3,7 +3,7 @@ package principal;
 
 
 public class Administrador extends javax.swing.JFrame {
-    public int contador=0;
+    public int contador=1;
 public  Cliente clientes []= new Cliente[5];
 
     public  Cliente[] getClientes() {
@@ -36,10 +36,10 @@ public  Cliente clientes []= new Cliente[5];
         principal = new javax.swing.JButton();
         registrar = new javax.swing.JButton();
         Asociar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        InformesClientes = new javax.swing.JButton();
+        DepositoM = new javax.swing.JButton();
+        Transferencia = new javax.swing.JButton();
+        Servicios = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         content = new javax.swing.JPanel();
 
@@ -90,51 +90,51 @@ public  Cliente clientes []= new Cliente[5];
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(102, 204, 255));
-        jButton3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Visualizar informes de clientes");
-        jButton3.setBorder(null);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        InformesClientes.setBackground(new java.awt.Color(102, 204, 255));
+        InformesClientes.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        InformesClientes.setForeground(new java.awt.Color(255, 255, 255));
+        InformesClientes.setText("Visualizar informes de clientes");
+        InformesClientes.setBorder(null);
+        InformesClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        InformesClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                InformesClientesActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(102, 204, 255));
-        jButton4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Deposito monetario");
-        jButton4.setBorder(null);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        DepositoM.setBackground(new java.awt.Color(102, 204, 255));
+        DepositoM.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        DepositoM.setForeground(new java.awt.Color(255, 255, 255));
+        DepositoM.setText("Deposito monetario");
+        DepositoM.setBorder(null);
+        DepositoM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DepositoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                DepositoMActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(102, 204, 255));
-        jButton5.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Realizar transferencia");
-        jButton5.setBorder(null);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Transferencia.setBackground(new java.awt.Color(102, 204, 255));
+        Transferencia.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        Transferencia.setForeground(new java.awt.Color(255, 255, 255));
+        Transferencia.setText("Realizar transferencia");
+        Transferencia.setBorder(null);
+        Transferencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Transferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                TransferenciaActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(102, 204, 255));
-        jButton6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Pago de servicios");
-        jButton6.setBorder(null);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Servicios.setBackground(new java.awt.Color(102, 204, 255));
+        Servicios.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        Servicios.setForeground(new java.awt.Color(255, 255, 255));
+        Servicios.setText("Pago de servicios");
+        Servicios.setBorder(null);
+        Servicios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Servicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ServiciosActionPerformed(evt);
             }
         });
 
@@ -158,12 +158,12 @@ public  Cliente clientes []= new Cliente[5];
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Servicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Transferencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DepositoM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(registrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Asociar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(InformesClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -178,13 +178,13 @@ public  Cliente clientes []= new Cliente[5];
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Asociar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(InformesClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addComponent(DepositoM, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Transferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Servicios, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
@@ -221,10 +221,10 @@ public  Cliente clientes []= new Cliente[5];
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void TransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferenciaActionPerformed
         // TODO add your handling code here:
-        
-         Transferencia pl5= new  Transferencia();
+        Administrador ventanaMadre=this;
+         Transferencia pl5= new  Transferencia(ventanaMadre);
         pl5.setSize(880, 620);
         pl5.setLocation(0,0);
         
@@ -234,7 +234,7 @@ public  Cliente clientes []= new Cliente[5];
         content.repaint();
         
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_TransferenciaActionPerformed
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         // TODO add your handling code here:
@@ -281,7 +281,7 @@ public  Cliente clientes []= new Cliente[5];
         
     }//GEN-LAST:event_AsociarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void InformesClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformesClientesActionPerformed
 
         // TODO add your handling code here:
         
@@ -300,13 +300,13 @@ public  Cliente clientes []= new Cliente[5];
         
         
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_InformesClientesActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void DepositoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositoMActionPerformed
         // TODO add your handling code here:
         
-        
-         Deposito pl4= new Deposito();
+        Administrador ventanaMadre=this;
+         Deposito pl4= new Deposito(ventanaMadre);
          
         pl4.setSize(880, 620);
         pl4.setLocation(0,0);
@@ -317,12 +317,12 @@ public  Cliente clientes []= new Cliente[5];
         content.repaint();
         
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_DepositoMActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiciosActionPerformed
         // TODO add your handling code here:
-        
-         Pagos pl6= new Pagos();
+        Administrador ventanaMadre=this;
+         Pagos pl6= new Pagos(ventanaMadre);
          
         pl6.setSize(880, 620);
         pl6.setLocation(0,0);
@@ -333,7 +333,7 @@ public  Cliente clientes []= new Cliente[5];
         content.repaint();
         
         
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ServiciosActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -360,11 +360,11 @@ public  Cliente clientes []= new Cliente[5];
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Asociar;
+    private javax.swing.JButton DepositoM;
+    private javax.swing.JButton InformesClientes;
+    private javax.swing.JButton Servicios;
+    private javax.swing.JButton Transferencia;
     private javax.swing.JPanel content;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
