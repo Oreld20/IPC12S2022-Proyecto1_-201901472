@@ -123,12 +123,12 @@ public class Deposito extends javax.swing.JPanel {
         if (jtxtMonto.getText().isEmpty()||Integer.parseInt(jtxtMonto.getText())==0) {
                     JOptionPane.showMessageDialog(this,"El monto debe ser superior a 0");
                 }else{
-        
         String dato=String.valueOf(jcbAsociados.getSelectedItem());
-        String[] fragmento= dato.split("");
+        String[] fragmento= dato.split(" ");
         int NoAsociado=Integer.parseInt(fragmento[0]);
         int Monto=Integer.parseInt(jtxtMonto.getText());
-        
+            System.out.println(NoAsociado);
+            System.out.println(Monto);
         for (int i = 0; i <clientes.length; i++) {
             if (clientes[i]!=null) {
             for (int j = 0; j <clientes[i].listadoDeCuentasAsociadas.length; j++) {  
@@ -138,9 +138,10 @@ public class Deposito extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(this,"Deposito relizado exitosamente");
                         System.out.println(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
                         jtxtMonto.setText("");
-                        break;
-                }
+                        
+                }  
             }
+            break;
             }
             }
         }

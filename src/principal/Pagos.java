@@ -1,6 +1,8 @@
 
 package principal;
 
+import javax.swing.JOptionPane;
+
 public class Pagos extends javax.swing.JPanel {
 Cliente clientes [] = new Cliente [5];
     public Administrador Madre;
@@ -13,19 +15,12 @@ Cliente clientes [] = new Cliente [5];
             for (int j = 0; j <clientes.length; j++) {
                 if (clientes[i]!=null) {
                 if (clientes[i].listadoDeCuentasAsociadas[j].Disponibilidad==false) {
-                   jcbCuenta.addItem(Integer.toString(clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada())+ " - " + " Cuenta de: " + clientes[i].getNombre() + " " +clientes[i].getApellido()); 
+                   jcbOrigen.addItem(Integer.toString(clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada())+ " - " + " Cuenta de: " + clientes[i].getNombre() + " " +clientes[i].getApellido()); 
                 }
             }
             }
             
-        }
-        
-        
-        
-        
-        
-        
-        
+        } 
     }
 
     @SuppressWarnings("unchecked")
@@ -35,7 +30,7 @@ Cliente clientes [] = new Cliente [5];
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jcbCuenta = new javax.swing.JComboBox<>();
+        jcbOrigen = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jcbServicio = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
@@ -53,8 +48,8 @@ Cliente clientes [] = new Cliente [5];
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cuenta a debitar");
 
-        jcbCuenta.setBackground(new java.awt.Color(102, 204, 255));
-        jcbCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        jcbOrigen.setBackground(new java.awt.Color(102, 204, 255));
+        jcbOrigen.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -78,6 +73,11 @@ Cliente clientes [] = new Cliente [5];
         btnAceptar.setText("Aceptar");
         btnAceptar.setBorder(null);
         btnAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,7 +94,7 @@ Cliente clientes [] = new Cliente [5];
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jcbCuenta, 0, 242, Short.MAX_VALUE)
+                                .addComponent(jcbOrigen, 0, 242, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jcbServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -111,7 +111,7 @@ Cliente clientes [] = new Cliente [5];
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jcbCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcbOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(112, 112, 112)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,6 +139,105 @@ Cliente clientes [] = new Cliente [5];
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+
+   if (jtxtMonto.getText().isEmpty()||Integer.parseInt(jtxtMonto.getText())==0) {
+                    JOptionPane.showMessageDialog(this,"El monto debe ser superior a 0");
+                }else{
+        String dato=String.valueOf(jcbOrigen.getSelectedItem());
+        String[] fragmento= dato.split(" ");
+        int NoAsociado=Integer.parseInt(fragmento[0]);
+        int Monto=Integer.parseInt(jtxtMonto.getText());
+        
+        
+        String destino=String.valueOf(jcbServicio.getSelectedItem());
+        System.out.println(destino);
+        
+        switch(destino){
+            case "Luz electrica":
+                        for (int i = 0; i <clientes.length; i++) {
+            if (clientes[i]!=null) {
+            for (int j = 0; j <clientes[i].listadoDeCuentasAsociadas.length; j++) {  
+                if (clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada()==NoAsociado) {
+                    if (clientes[i].listadoDeCuentasAsociadas[j].getSalado()>=Monto) {
+                        
+                    
+                    int ahora=clientes[i].listadoDeCuentasAsociadas[j].getSalado();
+                    clientes[i].listadoDeCuentasAsociadas[j].setSalado(ahora-Monto);
+                    int Elec=clientes[i].listadoDeCuentasAsociadas[j].servicio.getLuzElectrica();
+                    clientes[i].listadoDeCuentasAsociadas[j].servicio.setLuzElectrica(Elec+Monto);
+                    JOptionPane.showMessageDialog(this,"Deposito relizado exitosamente");
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].servicio.getLuzElectrica());
+                        jtxtMonto.setText("");
+                        break;
+                }else{
+                    JOptionPane.showMessageDialog(this,"La cuenta de origen no tiene suficientes fondos");
+                    break;
+                    }      
+                }
+            }
+            }
+            }
+                break; 
+            case "Agua":
+                for (int i = 0; i <clientes.length; i++) {
+            if (clientes[i]!=null) {
+            for (int j = 0; j <clientes[i].listadoDeCuentasAsociadas.length; j++) {  
+                if (clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada()==NoAsociado) {
+                    if (clientes[i].listadoDeCuentasAsociadas[j].getSalado()>=Monto) {
+                        
+                    
+                    int ahora=clientes[i].listadoDeCuentasAsociadas[j].getSalado();
+                    clientes[i].listadoDeCuentasAsociadas[j].setSalado(ahora-Monto);
+                    int Elec=clientes[i].listadoDeCuentasAsociadas[j].servicio.getAgua();
+                    clientes[i].listadoDeCuentasAsociadas[j].servicio.setAgua(Elec+Monto);
+                    JOptionPane.showMessageDialog(this,"Deposito relizado exitosamente");
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].servicio.getAgua());
+                        jtxtMonto.setText("");
+                        break;
+                }else{
+                    JOptionPane.showMessageDialog(this,"La cuenta de origen no tiene suficientes fondos");
+                    break;
+                    }      
+                }
+            }
+            }
+            }
+                break;
+            case "Servicio telefonico":
+                  for (int i = 0; i <clientes.length; i++) {
+            if (clientes[i]!=null) {
+            for (int j = 0; j <clientes[i].listadoDeCuentasAsociadas.length; j++) {  
+                if (clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada()==NoAsociado) {
+                    if (clientes[i].listadoDeCuentasAsociadas[j].getSalado()>=Monto) {
+                        
+                    
+                    int ahora=clientes[i].listadoDeCuentasAsociadas[j].getSalado();
+                    clientes[i].listadoDeCuentasAsociadas[j].setSalado(ahora-Monto);
+                    int Elec=clientes[i].listadoDeCuentasAsociadas[j].servicio.getServicioTelefonico();
+                    clientes[i].listadoDeCuentasAsociadas[j].servicio.setServicioTelefonico(Elec+Monto);
+                    JOptionPane.showMessageDialog(this,"Deposito relizado exitosamente");
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
+                        System.out.println(clientes[i].listadoDeCuentasAsociadas[j].servicio.getServicioTelefonico());
+                        jtxtMonto.setText("");
+                        break;
+                }else{
+                    JOptionPane.showMessageDialog(this,"La cuenta de origen no tiene suficientes fondos");
+                    break;
+                    }     
+                }
+            }
+            }
+            }
+
+                break;
+        }
+
+                }
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
@@ -147,7 +246,7 @@ Cliente clientes [] = new Cliente [5];
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> jcbCuenta;
+    private javax.swing.JComboBox<String> jcbOrigen;
     private javax.swing.JComboBox<String> jcbServicio;
     private javax.swing.JTextField jtxtMonto;
     // End of variables declaration//GEN-END:variables

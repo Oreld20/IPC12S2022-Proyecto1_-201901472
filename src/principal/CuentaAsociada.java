@@ -6,7 +6,8 @@ public class CuentaAsociada {
     int NumeroDeCuentaAsociada;
     boolean Disponibilidad = true;
     
-    Informacion info [] = new Informacion[4];
+    Servicios servicio = new Servicios();
+    Transacciones info [] = new Transacciones[4];
 
     public boolean getDisponibilidad() {
         return Disponibilidad;

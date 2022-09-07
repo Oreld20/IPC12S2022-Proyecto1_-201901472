@@ -154,12 +154,12 @@ Cliente clientes [] = new Cliente [5];
                     JOptionPane.showMessageDialog(this,"El monto debe ser superior a 0");
                 }else{
         String dato=String.valueOf(jcbOrigen.getSelectedItem());
-        String[] fragmento= dato.split("");
+        String[] fragmento= dato.split(" ");
         int NoAsociado=Integer.parseInt(fragmento[0]);
         int Monto=Integer.parseInt(jtxtMonto.getText());
         
          String dato1=String.valueOf(jcbDestino.getSelectedItem());
-        String[] fragmento1=dato1.split("");
+        String[] fragmento1=dato1.split(" ");
         int NoAsociado1=Integer.parseInt(fragmento1[0]);
         
         if (NoAsociado!=NoAsociado1) {
@@ -189,10 +189,7 @@ Cliente clientes [] = new Cliente [5];
                           JOptionPane.showMessageDialog(this,"La cuenta de origen no tiene suficientes fondos"); 
                            } 
                 }        
-               
-                
             }
-            
             }    
             }
         }

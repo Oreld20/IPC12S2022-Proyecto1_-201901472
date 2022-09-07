@@ -257,22 +257,13 @@ Cliente clientes [] = new Cliente [5];
                             if (clientes[i].listadoDeCuentasAsociadas[j].Disponibilidad==false) {
                                  model.addRow(new Object[]{clientes[i].listadoDeCuentasAsociadas[j].NumeroDeCuentaAsociada});
                             }
-
                         }
                          jtAsociados.setModel(model);
                             break;
-                    }
-                           
+                    }        
                 }
         }
-        
-
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    
-    
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable TbClientes;

@@ -128,14 +128,13 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutActionPerformed
-        // TODO add your handling code here:
+
         
         
     }//GEN-LAST:event_AboutActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
-        
+      
         Login a = new Login ();
         a.setVisible(true);
         this.setVisible(false);
@@ -143,7 +142,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginActionPerformed
 
     private void AboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMouseClicked
-        // TODO add your handling code here:
+       
         int p=201901472;
         String u="Eliot Oreld Ardón Pérez";
        JOptionPane.showMessageDialog(this, " Nombre: " + u + " Carne: " + p );

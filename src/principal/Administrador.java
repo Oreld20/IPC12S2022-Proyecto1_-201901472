@@ -3,7 +3,8 @@ package principal;
 
 
 public class Administrador extends javax.swing.JFrame {
-    public int contador=1;
+    public int contador=251;
+    public int id=121;
 public  Cliente clientes []= new Cliente[5];
 
     public  Cliente[] getClientes() {
@@ -337,8 +338,8 @@ public  Cliente clientes []= new Cliente[5];
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        
-         Historial pl7= new Historial();
+        Administrador ventanaMadre=this;
+         Historial pl7= new Historial(ventanaMadre);
          
         pl7.setSize(880, 620);
         pl7.setLocation(0,0);

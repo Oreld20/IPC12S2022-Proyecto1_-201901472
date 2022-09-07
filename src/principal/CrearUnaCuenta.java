@@ -165,21 +165,15 @@ public class CrearUnaCuenta extends javax.swing.JPanel {
         int saldo =0;
         int contador=0;
         int posicionClienteSeleccionado=cboClientes.getSelectedIndex();
-        
-       
          if (clientes[posicionClienteSeleccionado]!=null) {
         for (int i = 0; i <clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas.length; i++) {
                    if (clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas[i].getDisponibilidad()==false) {
                    contador =contador + 1;
                    }
-        
                 }}
-        
             if (contador == clientes.length) {
                 JOptionPane.showMessageDialog(this,"limite de cuentas asociadas alcanzado");
             }else{
-                
-                    
                     if (clientes[posicionClienteSeleccionado] != null) {
                         for (int j = 0; j <clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas.length; j++) {
                             if (clientes[posicionClienteSeleccionado].listadoDeCuentasAsociadas[j].Disponibilidad==true) {
@@ -189,22 +183,8 @@ public class CrearUnaCuenta extends javax.swing.JPanel {
                                  break;
                             }
                         }
-                      
-               
-                       
-                
-               
                     }
-                
-                    
                 JOptionPane.showMessageDialog(this,"Usuario creado con exito");
-               
-
-
-
-
-
-            
     }//GEN-LAST:event_btnCrearActionPerformed
     }
 
