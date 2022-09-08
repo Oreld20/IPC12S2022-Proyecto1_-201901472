@@ -2,11 +2,11 @@
 package principal;
 
 public class Transacciones {
-    int IdTransaccion=0;
-    String Fecha="";
-    String Detalle="";
-    int CreDebi=0;
-    int SaldoRestante=0;
+    int IdTransaccion;
+    String Fecha;
+    String Detalle;
+    int CreDebi;
+    int SaldoRestante;
 
     public int getIdTransaccion() {
         return IdTransaccion;

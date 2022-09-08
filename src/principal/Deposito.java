@@ -1,5 +1,7 @@
 
 package principal;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 public class Deposito extends javax.swing.JPanel {
@@ -135,9 +137,41 @@ public class Deposito extends javax.swing.JPanel {
                 if (clientes[i].listadoDeCuentasAsociadas[j].getNumeroDeCuentaAsociada()==NoAsociado) {
                     int ahora=clientes[i].listadoDeCuentasAsociadas[j].getSalado();
                     clientes[i].listadoDeCuentasAsociadas[j].setSalado(ahora+Monto);
+                     for (int k = 0; k <clientes[i].listadoDeCuentasAsociadas[j].info.length; k++) {
+                 if (clientes[i].listadoDeCuentasAsociadas[j]!=null) {
+                        
+                            if (clientes[i].listadoDeCuentasAsociadas[j].info[k]!=null) {
+                            int Contador=Madre.id;
+                                   Madre.id+=1;
+                                   Calendar fecha = new GregorianCalendar();
+                                   String año=Integer.toString(fecha.get(Calendar.YEAR));
+                                   String mes=Integer.toString(fecha.get(Calendar.MONTH));
+                                   String dia=Integer.toString(fecha.get(Calendar.DATE));
+                                   String fechacomp =año+"-"+mes+"-"+dia;
+                                   String hora=Integer.toString(fecha.get(Calendar.HOUR_OF_DAY));
+                                   String minuto=Integer.toString(fecha.get(Calendar.MINUTE));
+                                   String horacomp = hora+":"+minuto;
+                        clientes[i].listadoDeCuentasAsociadas[j].info[k].setIdTransaccion(Contador);
+                        clientes[i].listadoDeCuentasAsociadas[j].info[k].setFecha(fechacomp+horacomp);
+                        clientes[i].listadoDeCuentasAsociadas[j].info[k].setDetalle("Deposito");
+                        clientes[i].listadoDeCuentasAsociadas[j].info[k].setCreDebi(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
+                        clientes[i].listadoDeCuentasAsociadas[j].info[k].setSaldoRestante(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
+                                System.out.println(clientes[i].listadoDeCuentasAsociadas[j].info[k].getFecha());
+                                System.out.println(clientes[i].listadoDeCuentasAsociadas[j].info[k].getIdTransaccion());
+                                System.out.println(clientes[i].listadoDeCuentasAsociadas[j].info[k].getSaldoRestante());
+                                System.out.println(clientes[i].listadoDeCuentasAsociadas[j].info[k].getCreDebi());
+                                System.out.println(clientes[i].listadoDeCuentasAsociadas[j].info[k].getDetalle());
+                            }
+                        }      
+                        }
                     JOptionPane.showMessageDialog(this,"Deposito relizado exitosamente");
                         System.out.println(clientes[i].listadoDeCuentasAsociadas[j].getSalado());
                         jtxtMonto.setText("");
+                       
+                        
+                        
+                        
+                        
                         
                 }  
             }
